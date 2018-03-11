@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Maker</title>
+  
+  <subtitle>MAKER BLOG</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-03-11T13:37:37.468Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Ma</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Orecle客户端显示中文乱码问题解决</title>
+    <link href="http://yoursite.com/2018/03/11/Oracle01/"/>
+    <id>http://yoursite.com/2018/03/11/Oracle01/</id>
+    <published>2018-03-11T13:00:39.633Z</published>
+    <updated>2018-03-11T13:37:37.468Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="乱码问题出现原因"><a href="#乱码问题出现原因" class="headerlink" title="乱码问题出现原因"></a>乱码问题出现原因</h2><p>客户端使用的编码与Oracle服务器端编码不一致，导致中文乱码情况的出现</p><h2 id="乱码问题解决步骤"><a href="#乱码问题解决步骤" class="headerlink" title="乱码问题解决步骤"></a>乱码问题解决步骤</h2><h3 id="1-查看服务器端编码"><a href="#1-查看服务器端编码" class="headerlink" title="1 查看服务器端编码"></a>1 查看服务器端编码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select userenv(&apos;language&apos;) from dual;</span><br></pre></td></tr></table></figure><p>记录下来查询出来的结果<br>我的查询结果是：</p><p><img src="/2018/03/11/Oracle01/01.png" alt=""></p><h3 id="2-查看客户端的编码"><a href="#2-查看客户端的编码" class="headerlink" title="2 查看客户端的编码"></a>2 查看客户端的编码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from v$nls_paramters</span><br></pre></td></tr></table></figure><p>查看第一行中parameter像中为nls_language对应的value项中是否和第一步得到的值一样，如果不是，就设置环境变量</p><h3 id="3-设置环境变量"><a href="#3-设置环境变量" class="headerlink" title="3 设置环境变量"></a>3 设置环境变量</h3><p>计算机-&gt;属性-&gt;高级系统设置-&gt;环境变量-&gt;新建<br>设置变量名：NLS_LANG<br>设置变量值：AMERICAN_AMERICA.ZHS16GBK</p><h3 id="4-重新启动客户端"><a href="#4-重新启动客户端" class="headerlink" title="4 重新启动客户端"></a>4 重新启动客户端</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;乱码问题出现原因&quot;&gt;&lt;a href=&quot;#乱码问题出现原因&quot; class=&quot;headerlink&quot; title=&quot;乱码问题出现原因&quot;&gt;&lt;/a&gt;乱码问题出现原因&lt;/h2&gt;&lt;p&gt;客户端使用的编码与Oracle服务器端编码不一致，导致中文乱码情况的出现&lt;/p&gt;
+&lt;h2 i
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="http://yoursite.com/categories/Oracle/"/>
+    
+    
+      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="中文乱码" scheme="http://yoursite.com/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"/>
+    
+      <category term="Oracle" scheme="http://yoursite.com/tags/Oracle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2018/03/11/hello-world/"/>
+    <id>http://yoursite.com/2018/03/11/hello-world/</id>
+    <published>2018-03-11T13:00:39.624Z</published>
+    <updated>2018-03-10T15:12:21.879Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Oracle基本命令</title>
+    <link href="http://yoursite.com/2018/03/11/Oracle%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2018/03/11/Oracle基本命令/</id>
+    <published>2018-03-11T11:38:30.000Z</published>
+    <updated>2018-03-11T11:38:30.713Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
